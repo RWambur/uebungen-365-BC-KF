@@ -7,7 +7,7 @@ table 50101 Fahrzeug
 
     fields
     {
-        field(1; Kennzeichen; Code[20])
+        field(1; Kennzeichen; Code[20]) //??
         {
             DataClassification = ToBeClassified;
 
@@ -42,9 +42,9 @@ table 50101 Fahrzeug
             FieldClass = FlowField;
 
             DecimalPlaces = 1 : 1;
-            CalcFormula = Sum(Fahrt."Gefahrene KM" WHERE(Fahrzeug = FIELD(Kennzeichen)));
+            CalcFormula = Sum(Fahrt.GefahreneKM WHERE(Fahrzeug = FIELD(Kennzeichen)));
         }
-        field(8; Anängerkupplung; Boolean)
+        field(8; Anhängerkupplung; Boolean)
         {
             DataClassification = ToBeClassified;
 
@@ -56,9 +56,11 @@ table 50101 Fahrzeug
         }
         field(10; Restbuchwert; Decimal)
         {
+            DataClassification = ToBeClassified;
+
             FieldCalss = FlowField;
-            ClacFormula = Min(Abschreibung.Restbuchwert WHERE (Fahrzeug = FIELD(Kennzeichen)));
-            
+            ClacFormula = Min(Abschreibung.Restbuchwert WHERE (Fahrzeug = FIELD(Kennzeichen))); //??
+
         }
     }
     keys

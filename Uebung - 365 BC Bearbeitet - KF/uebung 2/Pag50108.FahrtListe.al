@@ -39,12 +39,12 @@ page 50108 FahrtListe
                     ApplicationArea = All;
 
                 }
-                field("Zweck der Fahrt"; "Zweck der Fahrt")
+                field(ZweckDerFahrt; ZweckDerFahrt)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Gefahrene KM"; "Gefahrene KM")
+                field(GefahreneKM; GefahreneKM)
                 {
                     ApplicationArea = All;
 

@@ -10,8 +10,7 @@ table 50102 Fahrt
         field(1; Fahrer; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = Employee."No." where("Führerschein" = filter(PKW | LKW));
-
+            TableRelation = Employee."No." where("Führerschein" = filter(PKW | LKW)); //Innerhalb des Servers
         }
         field(2; Nummer; Integer)
         {
@@ -33,22 +32,22 @@ table 50102 Fahrt
             DataClassification = ToBeClassified;
 
         }
-        field(6; "Zweck der Fahrt"; Text[30])
+        field(6; ZweckDerFahrt; Text[30])
         {
             DataClassification = ToBeClassified;
 
         }
-        field(7; "KM Fahrtbeginn"; Decimal)
+        field(7; KMFahrtbeginn; Decimal)
         {
             DataClassification = ToBeClassified;
             DecimalPlaces = 1 : 1;
         }
-        field(8; "KM Fahrtende"; Decimal)
+        field(8; KMFahrtende; Decimal)
         {
             DataClassification = ToBeClassified;
             DecimalPlaces = 1 : 1;
         }
-        field(9; "Gefahrene KM"; Decimal)
+        field(9; GefahreneKM; Decimal)
         {
             DataClassification = ToBeClassified;
             DecimalPlaces = 1 : 1;
@@ -68,8 +67,7 @@ table 50102 Fahrt
         key(PK; Fahrer, Nummer)
         {
             Clustered = true;
-            SumIndexFields = "Gefahrene KM";
+            SumIndexFields = GefahreneKM;
         }
     }
-
 }

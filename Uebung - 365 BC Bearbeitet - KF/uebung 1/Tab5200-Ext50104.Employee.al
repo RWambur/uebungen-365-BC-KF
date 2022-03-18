@@ -1,7 +1,7 @@
 /// <summary>
 /// TableExtension Tab5200 (ID 50104) extends Record Employee.
 /// </summary>
-tableextension 50104 Tab5200 extends Employee
+tableextension 50104 Tab5200 extends Employee //Innerhalb des Servers
 {
     fields
     {

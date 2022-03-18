@@ -20,12 +20,12 @@ page 50110 "Fahrt List Factbox"
                     ApplicationArea = All;
 
                 }
-                field("Zweck der Fahrt"; "Zweck der Fahrt")
+                field(ZweckDerFahrt; ZweckDerFahrt)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Gefahrene KM"; "Gefahrene KM")
+                field(GefahreneKM; GefahreneKM)
                 {
                     ApplicationArea = All;
 

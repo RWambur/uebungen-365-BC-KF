@@ -59,6 +59,10 @@ page 50105 Fahrzeug
                     ApplicationArea = All;
 
                 }
+                field(AfaMethode; AfaMethode) //??
+                {
+                    ApplicationArea = All;
+                }
                 field(Restbuchwert; Restbuchwert)
                 {
                     ApplicationArea = All;
@@ -87,5 +91,6 @@ page 50105 Fahrzeug
     }
 
     var
-        myInt: Integer;
+        "AfaMethode": Option linear,degressiv,kombiniert,leistungsabh;
+        AFA: Codeunit Afa;
 }
