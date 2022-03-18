@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Fahrzeug (ID 50105).
+/// </summary>
 page 50105 Fahrzeug
 {
     PageType = Card;
@@ -13,39 +16,39 @@ page 50105 Fahrzeug
             {
                 field(Kennzeichen; Kennzeichen)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Typ; Typ)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Hersteller; Hersteller)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Modell; Modell)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Kraftstoff; Kraftstoff)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Kilometerstand; Kilometerstand)
                 {
-                    Application = All;
+                    ApplicationArea = All;
                     Editable = false;
                     DrillDownPageId = "Fahrt Liste";
 
                 }
                 field(Anhängerkupplung; Anhängerkupplung)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
             }
@@ -53,17 +56,17 @@ page 50105 Fahrzeug
             {
                 field(Kaufpreis; Kaufpreis)
                 {
-                    Aplication = All;
+                    ApplicationArea = All;
 
                 }
                 field(Kaufdatum; Kaufdatum)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Restbuchwert; Restubuchwert)
+                field(Restbuchwert; Restbuchwert)
                 {
-                    Application = All;
+                    ApplicationArea = All;
                     DrillDownPageId = "Abschreibung Liste";
                     Editable = false;
 

@@ -1,3 +1,6 @@
+/// <summary>
+/// Page AbschreibenUebersicht (ID 50109).
+/// </summary>
 page 50109 AbschreibenUebersicht
 {
     PageType = List;
@@ -14,29 +17,30 @@ page 50109 AbschreibenUebersicht
             {
                 field(Fahrzeug; Fahrzeug)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Jahr; Jahr)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Abschreibungssatz; Abschreibungssatz)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Abschreibungsbetrag; Abschreibungsbetrag)
                 {
-                    Application = All;
+                    ApplicationArea = All;
                 }
 
-            }
-            field(Restbuchwert; Restbuchwert)
-            {
-                Application = All;
 
+                field(Restbuchwert; Restbuchwert)
+                {
+                    ApplicationArea = All;
+
+                }
             }
         }
     }

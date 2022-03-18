@@ -1,4 +1,7 @@
-page 50110 Fahrt List Factbox
+/// <summary>
+/// Page Fahrt (ID 50106).
+/// </summary>
+page 50110 "Fahrt List Factbox"
 {
     PageType = List;
     ApplicationArea = All;
@@ -12,20 +15,19 @@ page 50110 Fahrt List Factbox
         {
             repeater(GroupName)
             {
-                field(Fahrtbeginn;; Fahrtbeginn)
+                field(Fahrtbeginn; Fahrtbeginn)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Zweck der Fahrt;
-                    Zweck der Fahrt)
+                field("Zweck der Fahrt"; "Zweck der Fahrt")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Gefahrene KM; Gefahrene KM)
+                field("Gefahrene KM"; "Gefahrene KM")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
             }

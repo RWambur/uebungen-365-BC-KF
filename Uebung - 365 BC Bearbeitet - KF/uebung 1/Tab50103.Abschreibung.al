@@ -1,3 +1,6 @@
+/// <summary>
+/// Table Abschreibung (ID 50103).
+/// </summary>
 table 50103 Abschreibung
 {
     DataClassification = ToBeClassified;
@@ -7,7 +10,7 @@ table 50103 Abschreibung
         field(1; Fahrzeuge; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRealtion = Fahrzeug.Kennzeichen;
+            TableRelation = Fahrzeug.Kennzeichen;
         }
         field(2; Jahr; Integer)
         {
@@ -32,7 +35,7 @@ table 50103 Abschreibung
     }
     keys
     {
-        key(Fahrzeug, Jahr)
+        key(Fahrzeug; Jahr)
         {
             Clustered = true;
         }

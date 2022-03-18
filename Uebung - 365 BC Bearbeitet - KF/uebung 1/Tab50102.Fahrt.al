@@ -1,3 +1,6 @@
+/// <summary>
+/// Table Fahrt (ID 50102).
+/// </summary>
 table 50102 Fahrt
 {
     DataClassification = ToBeClassified;
@@ -7,70 +10,66 @@ table 50102 Fahrt
         field(1; Fahrer; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = Employee."No";
-            where("Führerschein" = filter(PKW | LKW));
-            
+            TableRelation = Employee."No" where("Führerschein" = filter(PKW | LKW));
+
         }
-        field(2;Nummer; Integer)
+        field(2; Nummer; Integer)
         {
             DataClassification = ToBeClassified;
             AutoIncrement = true;
         }
-        field(3;Fahrzeug; Code[20])
+        field(3; Fahrzeug; Code[20])
         {
             DataClassification = ToBeClassified;
             TableRelation = Fahrzeug.Kennzeichen;
         }
-        field(4;Fahrtbeginn; DataTime)
+        field(4; Fahrtbeginn; DateTime)
         {
             DataClassification = ToBeClassified;
-            
+
         }
-        field(5;Fahrtende; DataTime)
+        field(5; Fahrtende; DateTime)
         {
             DataClassification = ToBeClassified;
-            
+
         }
-        field(6;Zweck der Fahrt; Text[30])
+        field(6; "Zweck der Fahrt"; Text[30])
         {
             DataClassification = ToBeClassified;
-            
+
         }
-        field(7;KM Fahrtbeginn; Decimal)
-        {
-            DataClassification = ToBeClassified;
-            DecimalPlaces = 1 : 1;
-        }
-        field(8;KM Fahrtende; Decimal)
+        field(7; "KM Fahrtbeginn"; Decimal)
         {
             DataClassification = ToBeClassified;
             DecimalPlaces = 1 : 1;
         }
-        field(9;Gefahrene KM; Decimal)
+        field(8; "KM Fahrtende"; Decimal)
         {
             DataClassification = ToBeClassified;
             DecimalPlaces = 1 : 1;
         }
-        field(10;Führerschein; Option)
+        field(9; "Gefahrene KM"; Decimal)
         {
-            DataClassification = ToBeClassiefied;
-            OptionMembers = "Keinen", "PKW", "LKW";
+            DataClassification = ToBeClassified;
+            DecimalPlaces = 1 : 1;
+        }
+        field(10; Führerschein; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionMembers = "Keinen","PKW","LKW";
 
             TableRelation = IF ("Führerschein" = CONST(PKW)) Fahrzeug.Kennzeichen WHERE(Typ = Filter(Kombi | Transporter))
-                            ELSE Fahrzeug.Kennzeichen;
+            ELSE
+            Fahrzeug.Kennzeichen;
         }
     }
     keys
     {
-        key(PK, Fahrer, Nummer)
+        key(PK; Fahrer, Nummer)
         {
             Clustered = true;
             SumIndexFields = "Gefahrene KM";
         }
-        key(SK; Fahrtbeginn)
-        {
-            Clustered = true;
-        }
     }
-    
+
 }

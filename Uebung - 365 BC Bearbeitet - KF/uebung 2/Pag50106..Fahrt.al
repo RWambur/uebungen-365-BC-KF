@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Fahrt (ID 50110).
+/// </summary>
 page 50106 Fahrt
 {
     PageType = Card;
@@ -14,49 +17,48 @@ page 50106 Fahrt
             {
                 field(Fahrer; Fahrer)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Nummer; Nummer)
                 {
-                    Application = All;
+                    ApplicationArea = All;
                     Editable = false;
 
                 }
                 field(Fahrzeug; Fahrzeug)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Fahrtbeginn; Fahrtbeginn)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Fahrtende; Fahrtende)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Zweck der Fahrt;
-                    Zweck der Fahrt)
+                field("Zweck der Fahrt"; "Zweck der Fahrt")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(KM Fahrtbeginn; KM Fahrtbeginn)
+                field("KM Fahrtbeginn"; "KM Fahrtbeginn")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(KM Fahrtende; KM Fahrtende)
+                field("KM Fahrtende"; "KM Fahrtende")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Gefahrene KM; Gefahrene KM)
+                field("Gefahrene KM"; "Gefahrene KM")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
             }

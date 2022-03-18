@@ -1,3 +1,6 @@
+/// <summary>
+/// Page FahrtUebersicht (ID 50108).
+/// </summary>
 page 50108 FahrtUebersicht
 {
     PageType = List;
@@ -13,38 +16,37 @@ page 50108 FahrtUebersicht
             {
                 field(Fahrer; Fahrer)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Nummer; Nummer)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Fahrzeug; Fahrzeug)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Fahrtbeginn;; Fahrtbeginn)
+                field(Fahrtbeginn; Fahrtbeginn)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Fahrtende; Fahrtende)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Zweck der Fahrt;
-                    Zweck der Fahrt)
+                field("Zweck der Fahrt"; "Zweck der Fahrt")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
-                field(Gefahrene KM; Gefahrene KM)
+                field("Gefahrene KM"; "Gefahrene KM")
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
             }

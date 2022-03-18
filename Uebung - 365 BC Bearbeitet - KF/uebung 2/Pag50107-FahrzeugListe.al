@@ -1,3 +1,6 @@
+/// <summary>
+/// Page FahrzeugListe (ID 50107).
+/// </summary>
 page 50107 FahrzeugListe
 {
     PageType = List;
@@ -15,27 +18,27 @@ page 50107 FahrzeugListe
             {
                 field(Kennzeichen; Kennzeichen)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Typ; Typ)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Hersteller; Hersteller)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Modell; Modell)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
                 field(Kilometerstand; Kilometerstand)
                 {
-                    Application = All;
+                    ApplicationArea = All;
 
                 }
             }
@@ -60,7 +63,7 @@ page 50107 FahrzeugListe
                 RunObject = page Fahrzeug;
                 RunPageLink = Kennzeichen = field(Kennzeichen);
                 Promoted = true;
-                PromotedCategory = true;
+                PromotedCategory = Process;
                 PromotedIsBig = true;
                 Image = AnalysisView;
                 trigger OnAction();

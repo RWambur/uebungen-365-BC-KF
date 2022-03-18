@@ -1,3 +1,6 @@
+/// <summary>
+/// PageExtension ExtEmployee (ID 50111) extends Record Employee Card.
+/// </summary>
 pageextension 50111 ExtEmployee extends "Employee Card"
 {
     layout
@@ -5,7 +8,7 @@ pageextension 50111 ExtEmployee extends "Employee Card"
         // Add changes to page layout here
         addafter("Company E-Mail")
         {
-            field("Führerschein"; "Führerschein")
+            field(Führerschein; Führerschein)
             {
                 ApplicationArea = all;
             }
