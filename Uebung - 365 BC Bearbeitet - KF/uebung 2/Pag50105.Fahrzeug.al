@@ -43,12 +43,7 @@ page 50105 Fahrzeug
                 {
                     ApplicationArea = All;
                     Editable = false;
-                    DrillDownPageId = "Fahrt Liste";
-
-                }
-                field(Anhängerkupplung; Anhängerkupplung)
-                {
-                    ApplicationArea = All;
+                    DrillDownPageId = "FahrtListe";
 
                 }
             }
@@ -67,7 +62,7 @@ page 50105 Fahrzeug
                 field(Restbuchwert; Restbuchwert)
                 {
                     ApplicationArea = All;
-                    DrillDownPageId = "Abschreibung Liste";
+                    DrillDownPageId = "AbschreibenListe";
                     Editable = false;
 
                 }

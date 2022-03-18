@@ -7,7 +7,7 @@ table 50103 Abschreibung
 
     fields
     {
-        field(1; Fahrzeuge; Code[20])
+        field(1; Fahrzeug; Code[20])
         {
             DataClassification = ToBeClassified;
             TableRelation = Fahrzeug.Kennzeichen;
@@ -35,7 +35,7 @@ table 50103 Abschreibung
     }
     keys
     {
-        key(Fahrzeug; Jahr)
+        key(PK; Fahrzeug, Jahr)
         {
             Clustered = true;
         }

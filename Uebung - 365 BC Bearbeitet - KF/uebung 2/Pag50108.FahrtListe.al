@@ -1,13 +1,12 @@
 /// <summary>
-/// Page FahrzeugListe (ID 50107).
+/// Page FahrtUebersicht (ID 50108).
 /// </summary>
-page 50107 FahrzeugListe
+page 50108 FahrtListe
 {
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = Fahrzeug;
-    Editable = false;
+    SourceTable = Fahrt;
 
     layout
     {
@@ -15,27 +14,37 @@ page 50107 FahrzeugListe
         {
             repeater(GroupName)
             {
-                field(Kennzeichen; Kennzeichen)
+                field(Fahrer; Fahrer)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Typ; Typ)
+                field(Nummer; Nummer)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Hersteller; Hersteller)
+                field(Fahrzeug; Fahrzeug)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Modell; Modell)
+                field(Fahrtbeginn; Fahrtbeginn)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Kilometerstand; Kilometerstand)
+                field(Fahrtende; Fahrtende)
+                {
+                    ApplicationArea = All;
+
+                }
+                field("Zweck der Fahrt"; "Zweck der Fahrt")
+                {
+                    ApplicationArea = All;
+
+                }
+                field("Gefahrene KM"; "Gefahrene KM")
                 {
                     ApplicationArea = All;
 
@@ -44,11 +53,7 @@ page 50107 FahrzeugListe
         }
         area(Factboxes)
         {
-            part(Fahrtlistfactbox; "Fahrt List Factbox")
-            {
-                SubPageView = sorting(Fahrtbeginn) order(descending);
-                SubPageLink = Fahrzeug = field(Kennzeichen);
-            }
+
         }
     }
 
@@ -56,15 +61,10 @@ page 50107 FahrzeugListe
     {
         area(Processing)
         {
-            action(Karte)
+            action(ActionName)
             {
                 ApplicationArea = All;
-                RunObject = page Fahrzeug;
-                RunPageLink = Kennzeichen = field(Kennzeichen);
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                Image = AnalysisView;
+
                 trigger OnAction();
                 begin
 

@@ -1,12 +1,12 @@
 /// <summary>
-/// Page FahrzeugListe (ID 50107).
+/// Page AbschreibenUebersicht (ID 50109).
 /// </summary>
-page 50107 FahrzeugListe
+page 50109 AbschreibenListe
 {
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = Fahrzeug;
+    SourceTable = Abschreibung;
     Editable = false;
 
     layout
@@ -15,39 +15,32 @@ page 50107 FahrzeugListe
         {
             repeater(GroupName)
             {
-                field(Kennzeichen; Kennzeichen)
+                field(Fahrzeug; Fahrzeug)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Typ; Typ)
+                field(Jahr; Jahr)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Hersteller; Hersteller)
+                field(Abschreibungssatz; Abschreibungssatz)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Modell; Modell)
+                field(Abschreibungsbetrag; Abschreibungsbetrag)
+                {
+                    ApplicationArea = All;
+                }
+
+
+                field(Restbuchwert; Restbuchwert)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Kilometerstand; Kilometerstand)
-                {
-                    ApplicationArea = All;
-
-                }
-            }
-        }
-        area(Factboxes)
-        {
-            part(Fahrtlistfactbox; "Fahrt List Factbox")
-            {
-                SubPageView = sorting(Fahrtbeginn) order(descending);
-                SubPageLink = Fahrzeug = field(Kennzeichen);
             }
         }
     }
@@ -56,15 +49,10 @@ page 50107 FahrzeugListe
     {
         area(Processing)
         {
-            action(Karte)
+            action(ActionName)
             {
                 ApplicationArea = All;
-                RunObject = page Fahrzeug;
-                RunPageLink = Kennzeichen = field(Kennzeichen);
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                Image = AnalysisView;
+
                 trigger OnAction();
                 begin
 

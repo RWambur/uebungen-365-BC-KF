@@ -45,7 +45,7 @@ page 50110 "Fahrt List Factbox"
             action(Karte)
             {
                 ApplicationArea = All;
-                RunObject = Page "Fahrt Liste";
+                RunObject = Page "FahrtListe";
                 RunPageLink = Nummer = field(Nummer);
                 Promoted = true;
                 PromotedCategory = Process;

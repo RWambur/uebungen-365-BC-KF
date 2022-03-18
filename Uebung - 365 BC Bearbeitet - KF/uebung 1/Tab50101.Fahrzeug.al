@@ -49,7 +49,7 @@ table 50101 Fahrzeug
             DataClassification = ToBeClassified;
 
         }
-        field(9; Kaufdatum; Date)
+        field(9; Kaufdatum; DateTime)
         {
             DataClassification = ToBeClassified;
 
@@ -57,7 +57,8 @@ table 50101 Fahrzeug
         field(10; Restbuchwert; Decimal)
         {
             FieldCalss = FlowField;
-            ClacFormula = Min (Abschreibung.Restbuchwert WHERE(Fahrzeug = FIELD(Kennzeichen)));
+            ClacFormula = Min(Abschreibung.Restbuchwert WHERE (Fahrzeug = FIELD(Kennzeichen)));
+            
         }
     }
     keys

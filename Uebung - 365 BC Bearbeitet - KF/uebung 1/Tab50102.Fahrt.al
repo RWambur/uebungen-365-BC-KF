@@ -10,7 +10,7 @@ table 50102 Fahrt
         field(1; Fahrer; Code[20])
         {
             DataClassification = ToBeClassified;
-            TableRelation = Employee."No" where("Führerschein" = filter(PKW | LKW));
+            TableRelation = Employee."No." where("Führerschein" = filter(PKW | LKW));
 
         }
         field(2; Nummer; Integer)
