@@ -71,7 +71,7 @@ codeunit 50114 Afa
         Restbuchwert: Decimal;
 
     begin
-        Initialisierung(Kennzeichen);
+        Initialisierung(Kennzeichen); //??
         Restbuchwert := KFZ.Kaufpreis;
         Abschreibung := KFZ.Kaufpreis / Nutzungsdauer;
         Abschreibungssatz := 100 / Nutzungsdauer;
@@ -89,7 +89,7 @@ codeunit 50114 Afa
         Restbuchwert: Decimal;
 
     begin
-        Initialisierung(Kennzeichen);
+        Initialisierung(Kennzeichen); //??
         Restbuchwert := KFZ.Kaufpreis; // 10.000
         Abschreibungssatz := 0.75 * KFZ.Kaufpreis; // 75% * 10.000 = 7.500
         Abschreibung := Abschreibungssatz / Nutzungsdauer; // 7.500 / 12 = 625
@@ -109,7 +109,7 @@ codeunit 50114 Afa
         Abschreibungssatz: Decimal;
 
     begin
-        Initialisierung(Kennzeichen);
+        Initialisierung(Kennzeichen); //??
         Restbuchwert := KFZ.Kaufpreis;
         Einmal := 0;
         while (Jahr < "Aktuelles Jahr") AND (Jahr < (Kaufjahr + Nutzungsdauer)) do begin
@@ -142,7 +142,7 @@ codeunit 50114 Afa
         Abschreibung: Decimal;
 
     begin
-        Initialisierung(Kennzeichen);
+        Initialisierung(Kennzeichen); //??
         case KFZ.Typ of
             KFZ.Typ::Transpoerter:
                 KMGesamt := 10000;
@@ -150,7 +150,7 @@ codeunit 50114 Afa
                 Error('Methode ist nur für fahrzeugtyp Transporter zulässig!');
         end;
         Restbuchwert := KFZ.Kaufpreis;
-        FahrtenKFZ.SetRange(Fahrzeug, Kennzeichen);
+        FahrtenKFZ.SetRange(Fahrzeug, Kennzeichen); //??
         If FahrtenKFZ.find('-') then
             repeat
                 FahrtbeginnDatum := DT2Date(FahrtenKFZ.Fahrtbeginn);
@@ -158,14 +158,14 @@ codeunit 50114 Afa
                 if (FahrtbeginnJahr < "Aktuelles Jahr") AND (FahrtbeginnJahr < (Kaufjahr + Nutzungsdauer)) then
                     for Jahr := Kaufjahr to ("Aktuelles Jahr" - 1) do
                         if Jahr = FahrtbeginnJahr then
-                            KMproJahr[Jahr] := KMproJahr[Jahr] + FahrtenKFZ."Gefahrene KM";
+                            KMproJahr[Jahr] := KMproJahr[Jahr] + FahrtenKFZ."Gefahrene KM"; //??
             until FahrtenKFZ.Next = 0;
         Jahr := Kaufjahr;
         while (Jahr < "Aktuelles Jahr") AND (Jahr < (Kaufjahr + Nutzungsdauer)) do begin
             Abschreibungssatz := KMproJahr[Jahr] / KMGesamt * 100;
             Abschreibung := KFZ.Kaufpreis * Abschreibungssatz / 100;
             Restbuchwert := Restbuchwert - Abschreibung;
-            Speicherung(Kennzeichen, Jahr, Abschreibungssatz, Abschreibung, Restbuchwert);
+            Speicherung(Kennzeichen, Jahr, Abschreibungssatz, Abschreibung, Restbuchwert); //??
             Jahr := Jahr + 1;
         end;
     end;

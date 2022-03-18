@@ -97,7 +97,7 @@ page 50107 FahrzeugListe
                         "AfaMethode"::kombiniert:
                             Afa.Kombiniert(Kennzeichen);
                         "AfaMethode"::leistungsabh:
-                            Afa."Leistungsabhängig"(Kennzeichen);
+                            Afa."Leistungsabhängig"(Kennzeichen); //??
 
                     end;
                 end;
