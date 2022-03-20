@@ -2,6 +2,8 @@ report 50116 Fahrtenliste
 {
     UsageCategory = Administration;
     ApplicationArea = All;
+    DefaultLayout = RDLC;
+    RDLCLayout = 'MyRDLReport02.rdl';
 
     dataset
     {
