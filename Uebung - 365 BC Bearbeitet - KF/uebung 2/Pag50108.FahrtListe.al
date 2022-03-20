@@ -61,13 +61,14 @@ page 50108 FahrtListe
     {
         area(Processing)
         {
-            action(ActionName)
+            action("Fahrt importieren")
             {
-                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = New;
 
-                trigger OnAction();
+                trigger OnAction()
                 begin
-
+                    Xmlport.Run(50112, false, true);
                 end;
             }
         }

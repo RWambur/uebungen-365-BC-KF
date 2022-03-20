@@ -20,14 +20,6 @@ xmlport 50112 ImportFahrzeug
                 {
 
                 }
-                fieldelement(Typ; Fahrzeug.Typ)
-                {
-
-                }
-                fieldelement(Kraftstoff; Fahrzeug.Kraftstoff)
-                {
-
-                }
                 fieldelement(Hersteller; Fahrzeug.Hersteller)
                 {
 
@@ -40,7 +32,7 @@ xmlport 50112 ImportFahrzeug
                 {
 
                 }
-                fieldelement(Kilometerstand; Fahrzeug.Kilometerstand)
+                fieldelement(Kraftstoff; Fahrzeug.Kraftstoff)
                 {
 
                 }
@@ -49,10 +41,6 @@ xmlport 50112 ImportFahrzeug
 
                 }
                 fieldelement(Kaufdatum; Fahrzeug.Kaufdatum)
-                {
-
-                }
-                fieldelement(Restbuchwert; Fahrzeug.Restbuchwert)
                 {
 
                 }

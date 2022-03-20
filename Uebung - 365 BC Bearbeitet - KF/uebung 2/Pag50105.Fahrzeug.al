@@ -46,6 +46,11 @@ page 50105 Fahrzeug
                     DrillDownPageId = "FahrtListe";
 
                 }
+                field("Anhängerkupplung"; "Anhängerkupplung")
+                {
+                    ApplicationArea = All;
+
+                }
             }
             group(Abschreibung)
             {
@@ -59,7 +64,7 @@ page 50105 Fahrzeug
                     ApplicationArea = All;
 
                 }
-                field(AfaMethode; AfaMethode) //??
+                field(AfaMethode; AfaMethode)
                 {
                     ApplicationArea = All;
                 }
@@ -78,13 +83,35 @@ page 50105 Fahrzeug
     {
         area(Processing)
         {
-            action(ActionName)
+            action("Fahrzeuge importieren")
             {
-                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = New;
 
                 trigger OnAction()
                 begin
+                    Xmlport.Run(50112, false, true)
+                end;
+            }
+            action("Restbruchwert berechnen")
+            {
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = CashReceiptJournal;
 
+                trigger OnAction()
+                begin
+                    case "AfaMethode" of
+                        "AfaMethode"::linear:
+                            Afa.Linear(Kennzeichen);
+                        "AfaMethode"::degressiv:
+                            Afa.Degressiv(Kennzeichen);
+                        "AfaMethode"::kombiniert:
+                            Afa.Kombiniert(Kennzeichen);
+                        "AfaMethode"::leistungsabh:
+                            Afa."Leistungsabhängig"(Kennzeichen);
+                    end;
                 end;
             }
         }

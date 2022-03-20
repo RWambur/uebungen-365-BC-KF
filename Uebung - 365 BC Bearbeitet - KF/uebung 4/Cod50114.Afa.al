@@ -14,14 +14,9 @@ codeunit 50114 Afa
         Kaufjahr: Integer;
         "Aktuelles Jahr": Integer;
         Jahr: Integer;
-
-    procedure Initialisierung(
         Kennzeichen: Code[20];
-        Linear: Code[20];
-        Degressiv: Code[20];
-        Kombininert: Code[20];
-        Leistungsabhängig: Code[20]
-    )
+
+    procedure Initialisierung(Kennzeichen: Code[20])
     var
         myInt: Integer;
     begin
@@ -29,7 +24,7 @@ codeunit 50114 Afa
         case KFZ.Typ of
             KFZ.Typ::Kombi:
                 Nutzungsdauer := 6;
-            KFZ.Typ::Transpoerter:
+            KFZ.Typ::Transporter:
                 Nutzungsdauer := 6;
             KFZ.Typ::LKW:
                 Nutzungsdauer := 9;
@@ -71,7 +66,7 @@ codeunit 50114 Afa
         Restbuchwert: Decimal;
 
     begin
-        Initialisierung(Kennzeichen); //??
+        Initialisierung(Kennzeichen);
         Restbuchwert := KFZ.Kaufpreis;
         Abschreibung := KFZ.Kaufpreis / Nutzungsdauer;
         Abschreibungssatz := 100 / Nutzungsdauer;
@@ -89,7 +84,7 @@ codeunit 50114 Afa
         Restbuchwert: Decimal;
 
     begin
-        Initialisierung(Kennzeichen); //??
+        Initialisierung(Kennzeichen);
         Restbuchwert := KFZ.Kaufpreis; // 10.000
         Abschreibungssatz := 0.75 * KFZ.Kaufpreis; // 75% * 10.000 = 7.500
         Abschreibung := Abschreibungssatz / Nutzungsdauer; // 7.500 / 12 = 625
@@ -109,7 +104,7 @@ codeunit 50114 Afa
         Abschreibungssatz: Decimal;
 
     begin
-        Initialisierung(Kennzeichen); //??
+        Initialisierung(Kennzeichen);
         Restbuchwert := KFZ.Kaufpreis;
         Einmal := 0;
         while (Jahr < "Aktuelles Jahr") AND (Jahr < (Kaufjahr + Nutzungsdauer)) do begin
@@ -130,7 +125,7 @@ codeunit 50114 Afa
         end;
     end;
 
-    procedure Leistungsabhöngigkeit()
+    procedure Leistungsabhängig(Kennzeichen: Code[20]);
     var
         Restbuchwert: Decimal;
         KMGesamt: Decimal;
@@ -142,15 +137,15 @@ codeunit 50114 Afa
         Abschreibung: Decimal;
 
     begin
-        Initialisierung(Kennzeichen); //??
+        Initialisierung(Kennzeichen);
         case KFZ.Typ of
-            KFZ.Typ::Transpoerter:
+            KFZ.Typ::Transporter:
                 KMGesamt := 10000;
             else
                 Error('Methode ist nur für fahrzeugtyp Transporter zulässig!');
         end;
         Restbuchwert := KFZ.Kaufpreis;
-        FahrtenKFZ.SetRange(Fahrzeug, Kennzeichen); //??
+        FahrtenKFZ.SetRange(Fahrzeug, Kennzeichen);
         If FahrtenKFZ.find('-') then
             repeat
                 FahrtbeginnDatum := DT2Date(FahrtenKFZ.Fahrtbeginn);
@@ -158,7 +153,7 @@ codeunit 50114 Afa
                 if (FahrtbeginnJahr < "Aktuelles Jahr") AND (FahrtbeginnJahr < (Kaufjahr + Nutzungsdauer)) then
                     for Jahr := Kaufjahr to ("Aktuelles Jahr" - 1) do
                         if Jahr = FahrtbeginnJahr then
-                            KMproJahr[Jahr] := KMproJahr[Jahr] + FahrtenKFZ."Gefahrene KM"; //??
+                            KMproJahr[Jahr] := KMproJahr[Jahr] + FahrtenKFZ."GefahreneKM";
             until FahrtenKFZ.Next = 0;
         Jahr := Kaufjahr;
         while (Jahr < "Aktuelles Jahr") AND (Jahr < (Kaufjahr + Nutzungsdauer)) do begin

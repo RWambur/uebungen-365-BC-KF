@@ -7,7 +7,7 @@ table 50101 Fahrzeug
 
     fields
     {
-        field(1; Kennzeichen; Code[20]) //??
+        field(1; Kennzeichen; Code[20])
         {
             DataClassification = ToBeClassified;
 
@@ -15,7 +15,7 @@ table 50101 Fahrzeug
         field(2; Typ; Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = "Kombi","Transpoerter","LKW";
+            OptionMembers = "Kombi","Transporter","LKW";
         }
         field(3; Kraftstoff; Option)
         {
@@ -56,16 +56,14 @@ table 50101 Fahrzeug
         }
         field(10; Restbuchwert; Decimal)
         {
-            DataClassification = ToBeClassified;
-
-            FieldCalss = FlowField;
-            ClacFormula = Min(Abschreibung.Restbuchwert WHERE (Fahrzeug = FIELD(Kennzeichen))); //??
+            FieldClass = FlowField;
+            CalcFormula = Min(Abschreibung.Restbuchwert WHERE(Fahrzeug = FIELD(Kennzeichen)));
 
         }
     }
     keys
     {
-        key(PK, Kennzeichen, Typ)
+        key(PK; Kennzeichen, Typ)
         {
             Clustered = true;
         }

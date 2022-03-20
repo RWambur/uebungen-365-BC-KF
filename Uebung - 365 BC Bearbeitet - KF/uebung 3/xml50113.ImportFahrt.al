@@ -8,15 +8,11 @@ xmlport 50113 ImportFahrt
 
     schema
     {
-        textelement(Fahrer)
+        textelement(Fahrten)
         {
             tableelement(Fahrt; Fahrt)
             {
                 fieldelement(Fahrer; Fahrt.Fahrer)
-                {
-
-                }
-                fieldelement(Nummer; Fahrt.Nummer)
                 {
 
                 }
@@ -45,10 +41,6 @@ xmlport 50113 ImportFahrt
 
                 }
                 fieldelement(GefahreneKM; Fahrt.GefahreneKM)
-                {
-
-                }
-                fieldelement(Führerschein; Fahrt.Führerschein)
                 {
 
                 }

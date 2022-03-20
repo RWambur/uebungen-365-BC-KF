@@ -8,7 +8,7 @@ pageextension 50111 ExtEmployee extends "Employee Card" //Innerhalb des Servers
         // Add changes to page layout here
         addafter("Company E-Mail")
         {
-            field("Führerschein"; "Führerschein") //??
+            field("Führerschein"; "Führerschein")
             {
                 ApplicationArea = all;
             }

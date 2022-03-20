@@ -7,7 +7,7 @@ page 50106 Fahrt
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = Fahrt;
-    Editable = false;
+    Editable = true;
 
     layout
     {
@@ -20,7 +20,7 @@ page 50106 Fahrt
                     ApplicationArea = All;
                     trigger OnValidate()
                     var
-                        Employee: Record Employee; //Innerhalb des Servers
+                        Employee: Record Employee;
                     begin
                         Employee.Get(Fahrer);
                         "Führerschein" := Employee."Führerschein";
@@ -36,7 +36,6 @@ page 50106 Fahrt
                 field(Fahrzeug; Fahrzeug)
                 {
                     ApplicationArea = All;
-                    Editable = false;
 
                     trigger OnValidate()
                     var
@@ -51,6 +50,7 @@ page 50106 Fahrt
                 field(Fahrtbeginn; Fahrtbeginn)
                 {
                     ApplicationArea = All;
+
                     trigger OnValidate()
                     var
                         FahrtenKFZ: Record Fahrt;
@@ -88,13 +88,12 @@ page 50106 Fahrt
                 field(KMFahrtende; KMFahrtende)
                 {
                     ApplicationArea = All;
-                    Editable = false;
 
                     trigger OnValidate()
 
                     begin
                         if "KMFahrtende" > "KMFahrtbeginn" then
-                            "GefahreneKM" := "KMFahrtende" - KMFahrtbeginn
+                            "GefahreneKM" := "KMFahrtende" - "KMFahrtbeginn"
                         else
                             Error('Ungültige Eingabe');
                     end;

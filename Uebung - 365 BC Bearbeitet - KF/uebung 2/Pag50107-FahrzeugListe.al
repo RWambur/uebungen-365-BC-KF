@@ -80,28 +80,6 @@ page 50107 FahrzeugListe
                     Xmlport.Run(50112, false, true);
                 end;
             }
-            action("Restbruchwert berechnen")
-            {
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                Image = CashReceiptJournal;
-
-                trigger OnAction()
-                begin
-                    case "AfaMethode" of
-                        "AfaMethode"::linear:
-                            Afa.linear(Kennzeichen);
-                        "AfaMethode"::degressiv:
-                            Afa.Degressiv(Kennzeichen);
-                        "AfaMethode"::kombiniert:
-                            Afa.Kombiniert(Kennzeichen);
-                        "AfaMethode"::leistungsabh:
-                            Afa."Leistungsabhängig"(Kennzeichen); //??
-
-                    end;
-                end;
-            }
         }
     }
 }
