@@ -7,7 +7,7 @@ report 50116 Fahrtenliste
 
     dataset
     {
-        dataitem(Fahrzeug; Fahrzeug)
+        dataitem(FahrtenlisteA; Fahrzeug)
         {
             column(Kennzeichen; Kennzeichen)
             {
@@ -37,7 +37,7 @@ report 50116 Fahrtenliste
             {
 
             }
-            column(Anhängerkupplung; Anhängerkupplung)
+            column("Anhängerkupplung"; "Anhängerkupplung")
             {
 
             }
@@ -51,7 +51,7 @@ report 50116 Fahrtenliste
             }
 
         }
-        dataitem(Fahrt; Fahrt)
+        dataitem(FahrtenlisteB; Fahrt)
         {
             DataItemLinkReference = Fahrzeug;
             DataItemLink = Fahrzeug = field(Kennzeichen);
@@ -97,7 +97,7 @@ report 50116 Fahrtenliste
 
             }
         }
-        dataitem(Employee; Employee)
+        dataitem(FahrtenlisteC; Employee)
         {
             DataItemLinkReference = Fahrt;
             DataItemLink = "No." = field(Fahrer);
